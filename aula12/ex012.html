@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Que horas são?</title>
+    <style>
+        body{
+            background-color: lightskyblue;
+            color: white;
+            font: normal 20px arial;
+        }
+        p {
+            margin: 0;
+            background-color: violet;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p id="hora"></p>
+        <p id="mensagem_gratificante"></p>
+    </div>
+    <script>
+        var agora = new Date();
+        var horario = agora.getHours();
+        var horario2 = agora.getMinutes()
+        var hora = window.document.querySelector('p#hora');
+        var msg = window.document.querySelector('p#mensagem_gratificante');
+        
+        hora.innerHTML = `Agora são exatamente: ${horario} horas e ${horario2} min!`;
+
+        if(horario < 5){
+            msg.innerHTML = 'Boa Madrugada, Luiz!'     
+        }else if(horario < 12){
+            msg.innerHTML = 'Bom Dia, Luiz!' 
+        }else if(horario < 18){
+            msg.innerHTML = 'Boa Tarde, Luiz!' 
+        }else{
+            msg.innerHTML = 'Boa Noite, Luiz!' 
+        }
+        
+    </script>
+</body>
+</html>
